@@ -6,6 +6,7 @@
 
 ## ✨ Features
 
+
 | Feature | Details |
 |---|---|
 | 📄 **Upload reports** | PDF, JPG, PNG, TIFF — or paste raw text directly |
