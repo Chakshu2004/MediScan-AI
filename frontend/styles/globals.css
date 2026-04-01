@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:      #0a0d12;
+  --bg2:     #0f1318;
+  --bg3:     #151b24;
+  --surface: #1a2230;
+  --surface2:#1f2a3a;
+  --border:  rgba(99,179,237,0.12);
+  --border2: rgba(99,179,237,0.22);
+  --teal:    #38b2ac;
+  --teal2:   #4fd1c5;
+  --amber:   #ed8936;
+  --red:     #fc8181;
+  --green:   #68d391;
+  --text:    #e8f0f7;
+  --text2:   #8fa8c4;
+  --text3:   #4a6380;
+  --glow:    rgba(56,178,172,0.15);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 100vh;
+}
+
+/* Grid background */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(56,178,172,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,178,172,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Ambient glow */
+body::after {
+  content: '';
+  position: fixed; top: -20%; left: -10%;
+  width: 50vw; height: 50vh; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(56,178,172,0.06) 0%, transparent 70%);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 3px; }
+
+/* Animations */
+@keyframes pulse2 {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:0.6; transform:scale(1.3); }
+}
+@keyframes loadbar {
+  0%   { width:0%;  margin-left:0; }
+  50%  { width:60%; margin-left:20%; }
+  100% { width:0%;  margin-left:100%; }
+}
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(8px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes shimmer {
+  from { background-position: -400px 0; }
+  to   { background-position: 400px 0; }
+}
+
+.animate-fadein { animation: fadeIn 0.4s ease both; }
+
+.skeleton {
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface2) 50%, var(--surface) 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 8px;
+}
