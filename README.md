@@ -7,7 +7,7 @@
 ## ✨ Features
 
 
-| Feature | Detail |
+| Feature | Details |
 |---|---|
 | 📄 **Upload reports** | PDF, JPG, PNG, TIFF — or paste raw text directly |
 | 🔍 **OCR extraction** | Tesseract + PyPDF2 pull text from scanned documents |
